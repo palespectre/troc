@@ -51,7 +51,8 @@ class CardSmall extends React.Component {
                       style={styles.locationImg}
                       source={require('../Assets/Images/location.png')}
                     />
-                    <Text>
+                    <Text
+                      style={styles.locationTxt}>
                       {this.props.distance}
                     </Text>
                   </View>
@@ -123,9 +124,24 @@ class CardSmall extends React.Component {
             style={styles.image}
             {...this.props}
           />
-          <View>
-            <Text style={styles.categorie}>{this.props.categorie}</Text>
+          <View
+            style={styles.infoWrapper}>
             <Text style={styles.title}>{this.props.title}</Text>
+            <Text style={styles.categorie}>{this.props.categorie}</Text>
+            <View
+              style={styles.wrapperLocation}>
+              <View
+                style={styles.row}>
+                <Image
+                  style={styles.locationImg}
+                  source={require('../Assets/Images/location.png')}
+                />
+                <Text
+                  style={styles.locationTxt}>
+                  {this.props.distance}
+                </Text>
+              </View>
+            </View>
           </View>
         </TouchableOpacity>
       </View>
@@ -136,6 +152,7 @@ class CardSmall extends React.Component {
 const styles = StyleSheet.create ({
   containerCard: {
     width: '100%',
+    backgroundColor: '#f5f5f5',
   },
   row: {
     flexDirection: 'row',
@@ -147,17 +164,16 @@ const styles = StyleSheet.create ({
   card: {
     flexDirection: 'row',
     backgroundColor: '#f8f8f8',
-    padding: 20,
-    marginTop: 5,
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 5,
+    marginHorizontal: 10,
+    marginVertical: 5,
     borderRadius: 5,
+    elevation: 2,
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
     marginRight: 15,
+    borderRadius: 5,
   },
   paddingHorizontal: {
     paddingHorizontal: 20,
@@ -171,14 +187,20 @@ const styles = StyleSheet.create ({
     width: 20,
     height: 20,
   },
-  categorie: {
-    marginBottom: 20,
-    color: '#FA7268',
+  infoWrapper: {
+    paddingVertical: 18,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
+    marginBottom: 1,
+  },
+  categorie: {
+    marginBottom: 15,
+  },
+  locationTxt: {
+    color: '#FA7268',
   },
   modal: {
     position: 'relative',

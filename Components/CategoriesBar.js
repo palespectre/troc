@@ -51,6 +51,10 @@ class CategoriesBar extends React.Component {
                 </View>
                 )}
             </Carousel>
+            <Image
+              style={styles.headerImg}
+              source={require('../Assets/Images/categoriesHeader.png')}
+            />
           </View>
         )}
       </Subscribe>
@@ -66,9 +70,18 @@ const styles = StyleSheet.create ({
     width: 62,
     height: 62,
   },
+  headerImg: {
+    position: 'absolute',
+    top: 0,
+    marginTop: -5,
+    width: '101%',
+    height: 130,
+    resizeMode:'contain',
+    zIndex: -1,
+  },
   bar: {
     flexDirection: "row",
-    backgroundColor: "#FA7268",
+    backgroundColor: "white",
     height: 110,
     marginTop: -15,
     width: "100%",

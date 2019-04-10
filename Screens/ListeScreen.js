@@ -88,15 +88,12 @@ const styles = StyleSheet.create ({
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
+    backgroundColor: '#f5f5f5',
   },
   scrollView: {
     width: "100%",
+    paddingVertical: 10,
   }
 });
-
-const mapStateToProps = (state) => {
-  return {
-  favoritesFilm: state.favoritesFilm}
-}
 
 export { ListeScreen, ListeState };
