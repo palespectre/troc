@@ -14,16 +14,6 @@ class CardSmall extends React.Component {
     this.setState({modalVisible: visible});
   };
 
-//   function distance(lat1, lon1, lat2, lon2) {
-//   var p = 0.017453292519943295;    // Math.PI / 180
-//   var c = Math.cos;
-//   var a = 0.5 - c((lat2 - lat1) * p)/2 +
-//           c(lat1 * p) * c(lat2 * p) *
-//           (1 - c((lon2 - lon1) * p))/2;
-//
-//   return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
-// }
-
   render () {
     return (
       <View style={styles.containerCard}>
@@ -78,12 +68,12 @@ class CardSmall extends React.Component {
                 sneak={80}>
                 <Image
                   style={styles.imgModal}
-                  source={this.props.imgModal}
+                  source={this.props.imgModal1}
                   {...this.props}
                 />
                 <Image
                   style={styles.imgModal}
-                  source={this.props.imgModal}
+                  source={this.props.imgModal2}
                   {...this.props}
                 />
               </Carousel>
@@ -152,7 +142,7 @@ class CardSmall extends React.Component {
 const styles = StyleSheet.create ({
   containerCard: {
     width: '100%',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#efefef',
   },
   row: {
     flexDirection: 'row',
@@ -167,7 +157,6 @@ const styles = StyleSheet.create ({
     marginHorizontal: 10,
     marginVertical: 5,
     borderRadius: 5,
-    elevation: 2,
   },
   image: {
     width: 120,
@@ -250,6 +239,7 @@ const styles = StyleSheet.create ({
     width: '80%',
     height: 250,
     marginVertical: 10,
+    borderRadius: 5,
   },
   descriptionView: {
     marginTop: -40,
@@ -259,10 +249,12 @@ const styles = StyleSheet.create ({
     fontSize: 18,
     paddingHorizontal: 20,
     marginBottom: 30,
+    lineHeight: 25,
   },
   condition: {
     paddingHorizontal: 20,
     fontWeight: 'bold',
+    color: 'black',
     fontSize: 17,
     marginBottom: 5,
   },

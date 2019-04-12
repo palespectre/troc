@@ -3,13 +3,8 @@ import { View, Text, StyleSheet, Image, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Rate from '../Components/Rate'
 import CardSmall from '../Components/CardSmall'
-import { MyObjects } from '../MyObjects'
 
 class AccountScreen extends React.Component {
-
-  state = {
-    myObjects: MyObjects,
-  }
 
   render() {
     return (
@@ -21,11 +16,11 @@ class AccountScreen extends React.Component {
           source={require('../Assets/Images/moi.jpg')}
         />
           <View
-            style={styles.greyContainer}>
+            style={styles.personalInfos}>
             <Text
               style={styles.name}>Pierre Cormier</Text>
             <Text
-              style={styles.presentation}>Lorem ipsum dolor sit amet, consec adipis elit. Lautem unde odio!</Text>
+              style={styles.presentation}>J'échange surtout des livres et vêtements. N'hésitez pas à me contacter!</Text>
           </View>
           <View
             style={styles.infoWrapper}>
@@ -35,8 +30,9 @@ class AccountScreen extends React.Component {
                 style={styles.icon}
                 name="md-mail"
                 size={30}
-                color="#4F8EF7" />
-              <Text>cormierpierre@gmail.com</Text>
+                color="#9a9a9a" />
+              <Text
+                style={styles.font}>cormierpierre@gmail.com</Text>
             </View>
             <View
               style={styles.lineWrapper}>
@@ -44,39 +40,32 @@ class AccountScreen extends React.Component {
                 style={styles.icon}
                 name="md-home"
                 size={30}
-                color="#4F8EF7" />
-              <Text>15 rue du roi Albert, 44000 Nantes</Text>
+                color="#9a9a9a" />
+              <Text
+                style={styles.font}>15 rue du roi Albert, 44000 Nantes</Text>
             </View>
           </View>
-          <Rate
-            color={true}
-            name="Elisabeth"
-            description="Très bonne échange avec Pierre. Précis et ponctuel. Je recommande !"/>
-          <Rate
-            color={false}
-            style={styles.white}
-            name="Eric"
-            description="Objet en très bon état, identique à l'annonce. Le troc s'est très bien déorulé."/>
-          <Rate
-            color={true}
-            style={styles.white}
-            name="Marguerite"
-            description="Je suis très satisfaite de cet échange. Merci encore ! A très bientôt j'espère"/>
+          <View
+            style={styles.ratesWrapper}>
+            <Rate
+              color={true}
+              photo={require('../Assets/Images/elisabeth.jpg')}
+              name="Elisabeth"
+              description="Très bon échange avec Pierre. Précis et ponctuel. Je recommande !"/>
+            <Rate
+              color={false}
+              photo={require('../Assets/Images/shields.jpg')}
+              style={styles.white}
+              name="Eric"
+              description="Objet en très bon état, identique à l'annonce. Le troc s'est très bien déroulé."/>
+            <Rate
+              color={true}
+              photo={require('../Assets/Images/marguerite.jpg')}
+              style={styles.white}
+              name="Marguerite"
+              description="Je suis très satisfaite de cet échange. Merci encore ! A très bientôt j'espère"/>
           </View>
-          { this.state.myObjects.map(object => (
-            <CardSmall
-              categorie={object.categorie}
-              title={object.title}
-              longitude={object.longitude}
-              owner={object.owner}
-              email={object.email}
-              evaluation={object.evaluationOwner}
-              imgCard={object.img}
-              imgModal={object.img}
-              condition={object.condition}
-              description={object.description}
-              key={object.id}/>
-            ))}
+          </View>
         </ScrollView>
     );
   }
@@ -87,20 +76,20 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     paddingVertical: 30,
-    backgroundColor: 'white',
+    backgroundColor: '#efefef',
+  },
+  scrollView: {
+    width: "100%",
   },
   image: {
-    position: 'relative',
     width: 200,
     height: 200,
     borderRadius: 50,
     marginRight: 15,
     resizeMode:'contain',
-    elevation: 3,
   },
-  greyContainer: {
-    position: 'relative',
-    backgroundColor: '#efefef',
+  personalInfos: {
+    backgroundColor: 'white',
     height: 260,
     width: '90%',
     marginTop: -100,
@@ -109,6 +98,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     justifyContent: 'flex-end',
     alignItems: 'center',
+    zIndex: -1,
   },
   name: {
     color: 'black',
@@ -120,19 +110,32 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 22,
   },
+  font: {
+    fontSize: 16,
+  },
   infoWrapper: {
-    paddingVertical: 40,
+    padding: 30,
+    borderRadius: 10,
+    marginTop: 18,
+    width: '90%',
+    backgroundColor: 'white',
   },
   lineWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 5,
   },
+  ratesWrapper: {
+    borderRadius: 10,
+    backgroundColor: 'white',
+    marginTop: 18,
+  },
+  cardsWrapper: {
+    marginTop: 18,
+    width: '95%',
+  },
   icon: {
     marginRight: 15,
-  },
-  scrollView: {
-    width: "100%",
   }
 });
 

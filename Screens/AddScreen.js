@@ -18,6 +18,7 @@ class AddScreen extends React.Component {
   handleSubmit = () => {
     const results = this._form.getValue(); // use that ref to get the form value
     console.log('value: ', results);
+
     if (results) {
       this.setModalVisible(!this.state.modalVisible);
     }
@@ -36,6 +37,9 @@ class AddScreen extends React.Component {
       Livre: 'Livre',
       Multimedia: 'Multimedia',
       Mobilier: 'Mobilier',
+      Vehicule: 'Véhicule',
+      Service: 'Service',
+      Mobilier: 'Musique',
     });
 
     // default values
@@ -58,8 +62,7 @@ class AddScreen extends React.Component {
       condition: Condition,
       description: t.String,
       category: Category,
-      location: t.String,
-      terms: t.Boolean
+      location: t.String
     });
 
     // initialize the form
@@ -97,9 +100,6 @@ class AddScreen extends React.Component {
         location: {
           label: 'Lieu',
           error: 'Ce champ est obligatoire.'
-        },
-        terms: {
-          label: 'Agree to Terms',
         },
       },
     };

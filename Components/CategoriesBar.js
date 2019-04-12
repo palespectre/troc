@@ -96,6 +96,7 @@ const styles = StyleSheet.create ({
   icon: {
     width: "65%",
     height: "65%",
+    resizeMode:'contain',
   },
 });
 

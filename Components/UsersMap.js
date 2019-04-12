@@ -1,9 +1,8 @@
-import React from 'react';
-import SearchInput from './SearchInput';
-import MapView from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
-import Marker from 'react-native-maps';
-import { View, StyleSheet, Image, Modal, TouchableOpacity, Text, Linking } from 'react-native';
-import { Objects } from '../Objects';
+import React from 'react'
+import MapView from 'react-native-maps' // remove PROVIDER_GOOGLE import if not using Google Maps
+import Marker from 'react-native-maps'
+import { View, StyleSheet, Image, Modal, TouchableOpacity, Text, Linking } from 'react-native'
+import { Objects } from '../Objects'
 import ButtonPrimary from './ButtonPrimary'
 import Carousel from "react-native-carousel-control"
 
@@ -113,7 +112,7 @@ class UsersMap extends React.Component {
                           />
                           <Image
                             style={styles.imgModal}
-                            source={object.img}
+                            source={object.img2}
                           />
                         </Carousel>
                         <View
@@ -248,6 +247,7 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 250,
     marginVertical: 10,
+    borderRadius: 5,
   },
   descriptionView: {
     marginTop: -40,
@@ -257,12 +257,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     paddingHorizontal: 20,
     marginBottom: 30,
+    lineHeight: 25,
   },
   condition: {
     paddingHorizontal: 20,
     fontWeight: 'bold',
     fontSize: 17,
     marginBottom: 5,
+    color: 'black',
   },
  container: {
    ...StyleSheet.absoluteFillObject,

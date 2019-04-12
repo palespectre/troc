@@ -1,8 +1,7 @@
-import React from "react";
-import SearchInput from '../Components/SearchInput';
-import ButtonSecondary from '../Components/ButtonSecondary';
-import UsersMap from '../Components/UsersMap';
-import { AppRegistry, TextInput, Alert, TouchableOpacity, StyleSheet, Button, View, Text, Image } from "react-native";
+import React from "react"
+import ButtonSecondary from '../Components/ButtonSecondary'
+import UsersMap from '../Components/UsersMap'
+import { AppRegistry, TextInput, Alert, TouchableOpacity, StyleSheet, Button, View, Text, Image } from "react-native"
 
 class MapScreen extends React.Component {
 
@@ -61,6 +60,7 @@ const styles = StyleSheet.create({
  },
  txtBtn: {
    fontSize: 16,
+   color: 'black',
  },
  viewMap: {
    flex: 1,

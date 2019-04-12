@@ -1,12 +1,12 @@
-import React from "react";
-import _ from "lodash";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
-import CardSmall from '../Components/CardSmall';
-import ButtonPrimary from '../Components/ButtonPrimary';
-import CategoriesBar from '../Components/CategoriesBar';
-import { Objects } from '../Objects';
+import React from "react"
+import _ from "lodash"
+import { View, Text, StyleSheet, ScrollView } from "react-native"
+import CardSmall from '../Components/CardSmall'
+import ButtonPrimary from '../Components/ButtonPrimary'
+import CategoriesBar from '../Components/CategoriesBar'
+import { Objects } from '../Objects'
 import { Categories } from '../Categories'
-import { Container, Subscribe } from 'unstated';
+import { Container, Subscribe } from 'unstated'
 
 class ListeState extends Container {
 
@@ -23,6 +23,13 @@ class ListeState extends Container {
         isSelected: false,
       }))
     }
+
+  addObject(object) {
+    this.setState({
+      ...this.state,
+      objects: [...this.state.objects, object],
+    })
+  };
 
   setObjects(params) {
     this.setState({
@@ -69,7 +76,8 @@ function ListeScreen () {
               email={object.email}
               evaluation={object.evaluationOwner}
               imgCard={object.img}
-              imgModal={object.img}
+              imgModal1={object.img}
+              imgModal2={object.img2}
               condition={object.condition}
               description={object.description}
               distance={object.distance}
@@ -88,7 +96,7 @@ const styles = StyleSheet.create ({
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#efefef',
   },
   scrollView: {
     width: "100%",

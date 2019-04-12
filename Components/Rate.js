@@ -14,18 +14,17 @@ class Rate extends React.Component {
   render () {
     return (
       <View
-        style={styles.container, [this.props.color ? {backgroundColor: 'rgba(0,0,0,0.03)'} : {backgroundColor: 'white'},
+        style={[this.props.color ? {backgroundColor: '#f4f4f4'} : {backgroundColor: 'white'},
             {width:'90%',
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: 20,
             paddingVertical: 10,
-            borderRadius: 5,
-            marginVertical: 10}
+            borderRadius: 5}
       ]}>
         <Image
           style={styles.image}
-          source={require('../Assets/Images/moi.jpg')}
+          source={this.props.photo}
         />
         <View
           style={styles.infoWrapper}>
@@ -65,7 +64,7 @@ const styles = StyleSheet.create ({
     marginBottom: 3,
   },
   name: {
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 'bold',
     marginRight: 15,
   },
@@ -75,6 +74,9 @@ const styles = StyleSheet.create ({
     borderRadius: 50,
     resizeMode:'contain',
   },
+  description: {
+    fontSize: 16,
+  }
 });
 
 export default Rate
